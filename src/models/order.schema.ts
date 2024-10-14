@@ -9,16 +9,18 @@ export const OrderSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
-  products: {
-    product: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Product',
+  products: [
+    {
+      product: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Product',
+      },
+      quantity: {
+        type: Number,
+        default: 1,
+      },
     },
-    quantity: {
-      type: Number,
-      default: 0,
-    },
-  },
+  ],
   created: {
     type: Date,
     default: Date.now,
