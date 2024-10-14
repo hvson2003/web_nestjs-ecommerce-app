@@ -48,11 +48,6 @@ export class UserService {
     return await this.userModel.findOne({ username });
   }
 
-  // For dev
-  async findAll() {
-    return await this.userModel.find().exec();
-  }
-
   sanitizeUser(user: User) {
     const sanitized = user.toObject();
     delete sanitized['password'];
